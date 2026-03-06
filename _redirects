@@ -11,10 +11,8 @@ https://gorgeous-platypus-fd8e42.netlify.app/* https://alaman.in/:splat 301!
 /index.html/admin /admin/ 301
 /index.html/admin/* /admin/:splat 301
 
-# Hide .html extension, keep pages accessible
+# Clean URLs
 /index.html / 301!
-/*.html / 301!
-/category/:page.html /category/:page 301!
+/*.html /:splat 301!
 / /index.html 200
-/:page /:page.html 200
-/category/:page /category/:page.html 200
+/:splat /:splat.html 200
