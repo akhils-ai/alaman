@@ -258,6 +258,508 @@
       position: relative;
       z-index: 10;
     }
+
+    .festival-wish-card {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      width: min(360px, calc(100vw - 40px));
+      z-index: 99998;
+      color: var(--festival-text, #fff);
+      border-radius: 28px;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      font-family: "Montserrat", sans-serif;
+      overflow: visible;
+      opacity: 0;
+      transform: translateY(20px) scale(0.97);
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.88s cubic-bezier(0.16, 0.8, 0.2, 1), transform 0.88s cubic-bezier(0.16, 0.8, 0.2, 1), visibility 0s linear 0.88s;
+    }
+
+    .festival-wish-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02) 46%, rgba(255, 255, 255, 0.08) 100%);
+      pointer-events: none;
+      opacity: 0.2;
+    }
+
+    .festival-wish-card.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      visibility: visible;
+      pointer-events: auto;
+      transition-delay: 0s;
+    }
+
+    .festival-sky {
+      position: fixed;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .festival-splash {
+      position: fixed;
+      inset: 0;
+      z-index: 99997;
+      display: none;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.9s cubic-bezier(0.18, 0.78, 0.22, 1);
+      background: rgba(7, 16, 25, 0.34);
+      backdrop-filter: blur(9px) saturate(120%);
+      -webkit-backdrop-filter: blur(9px) saturate(120%);
+    }
+
+    .festival-splash.fade-out {
+      opacity: 0;
+    }
+
+    .festival-splash.fade-out .festival-splash-svg {
+      opacity: 0;
+      transform: scale(1.02);
+      filter: blur(6px) saturate(102%);
+    }
+
+    .festival-splash.fade-out .festival-splash-mist {
+      opacity: 0;
+      filter: blur(40px);
+      transform: translate3d(2.5%, 1.8%, 0) scale(1.1);
+    }
+
+    .festival-splash.fade-out .festival-splash-content {
+      opacity: 0;
+      transform: translateY(6px) scale(0.985);
+    }
+
+    .festival-splash-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      filter: blur(2px) saturate(108%);
+      opacity: 0.74;
+      transition: opacity 0.62s ease, filter 0.62s ease, transform 0.62s ease;
+    }
+
+    .festival-splash-svg path {
+      opacity: 0.52;
+    }
+
+    .festival-splash-logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: clamp(74px, 10vw, 126px);
+      height: auto;
+      transform: translate(-50%, -50%) scale(0.72);
+      opacity: 0;
+      filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.45));
+      transition: opacity 0.5s ease, transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+      z-index: 2;
+    }
+
+    .festival-splash-logo.show {
+      opacity: 0.96;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .festival-splash-mist {
+      position: absolute;
+      inset: -20% -10%;
+      background:
+        radial-gradient(42% 30% at 20% 30%, rgba(255, 255, 255, 0.2), transparent 70%),
+        radial-gradient(34% 26% at 78% 70%, rgba(255, 255, 255, 0.16), transparent 70%),
+        radial-gradient(38% 28% at 55% 18%, rgba(255, 255, 255, 0.14), transparent 70%);
+      filter: blur(24px);
+      opacity: 0.55;
+      animation: mistFloat 9s ease-in-out infinite alternate;
+      transition: opacity 0.65s ease, filter 0.65s ease, transform 0.65s ease;
+    }
+
+    @keyframes mistFloat {
+      0% {
+        transform: translate3d(-2%, -1%, 0) scale(1);
+      }
+      100% {
+        transform: translate3d(2.5%, 1.5%, 0) scale(1.05);
+      }
+    }
+
+    .festival-splash-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      opacity: 0;
+      transform: translateY(18px) scale(0.98);
+      transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    .festival-splash-content.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      transition-duration: 0.52s, 0.7s;
+    }
+
+    .festival-splash-inner {
+      max-width: 640px;
+      border-radius: 28px;
+      border: none;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.08) 52%, rgba(255, 255, 255, 0.18));
+      box-shadow: 0 24px 66px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(22px) saturate(150%);
+      -webkit-backdrop-filter: blur(22px) saturate(150%);
+      padding: clamp(18px, 4vw, 34px) clamp(16px, 4vw, 34px);
+      position: relative;
+      overflow: hidden;
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 1;
+      transition: transform 0.88s cubic-bezier(0.16, 0.8, 0.2, 1), opacity 0.82s ease;
+    }
+
+    .festival-splash-inner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.04) 42%, rgba(255, 255, 255, 0.2) 100%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .festival-splash-inner.morph-to-card {
+      transform: translate3d(-34vw, 34vh, 0) scale(0.54);
+      opacity: 0.08;
+    }
+
+    .festival-splash-emoji {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .festival-splash-title {
+      font-size: clamp(1.5rem, 4vw, 2.7rem);
+      font-weight: 700;
+      margin: 0 0 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .festival-splash-text {
+      margin: 0;
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      line-height: 1.6;
+      opacity: 0.92;
+    }
+
+    body.festival-active .festival-sky {
+      opacity: 1;
+    }
+
+    .festival-sky-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .festival-moon {
+      position: absolute;
+      top: 78px;
+      right: 64px;
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #fff8d8 0%, #fbe9ab 45%, #d2b86f 100%);
+      box-shadow: 0 0 40px rgba(255, 236, 168, 0.48);
+      opacity: 0.85;
+      transform: scale(0.96);
+      animation: moonDrift 9s ease-in-out infinite;
+    }
+
+    .festival-moon::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(6, 14, 28, 0.86);
+    }
+
+    @keyframes moonDrift {
+      0%, 100% {
+        transform: translate3d(0, 0, 0) scale(0.96);
+      }
+      50% {
+        transform: translate3d(-10px, 8px, 0) scale(1);
+      }
+    }
+
+    .festival-wish-content {
+      position: relative;
+      padding: 16px 18px;
+      border-radius: 28px;
+      background:
+        radial-gradient(130% 120% at 10% 8%, rgba(255, 255, 255, 0.14), transparent 60%),
+        linear-gradient(160deg, rgba(8, 12, 18, 0.55), rgba(12, 16, 21, 0.44) 60%, rgba(18, 22, 28, 0.38));
+      backdrop-filter: blur(22px) saturate(145%);
+      -webkit-backdrop-filter: blur(22px) saturate(145%);
+      box-shadow: 0 14px 46px rgba(0, 0, 0, 0.28);
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .festival-wish-content::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 30px;
+      background: radial-gradient(90% 70% at 20% 0%, rgba(255, 255, 255, 0.2), transparent 75%);
+      filter: blur(9px);
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .festival-wish-content::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      background: linear-gradient(130deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.02) 45%, rgba(255, 255, 255, 0.1));
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .festival-wish-topline {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 13px;
+      opacity: 0.92;
+    }
+
+    .festival-wish-emoji {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .festival-wish-title {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.3;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--festival-title, #fff);
+    }
+
+    .festival-wish-sub {
+      margin-top: 2px;
+      font-size: 12px;
+      opacity: 0.78;
+      letter-spacing: 0.02em;
+    }
+
+    .festival-wish-text {
+      margin: 8px 0 0;
+      font-size: 13px;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    .festival-wish-date {
+      margin-top: 10px;
+      font-size: 11px;
+      opacity: 0.75;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    body.festival-new-year {
+      --festival-title: #ffe78a;
+      --festival-text: #f6f9ff;
+      --festival-border: rgba(255, 231, 138, 0.35);
+      --festival-bg1: rgba(8, 16, 48, 0.92);
+      --festival-bg2: rgba(12, 24, 70, 0.9);
+      --festival-shadow: rgba(17, 44, 121, 0.45);
+    }
+
+    body.festival-pongal {
+      --festival-title: #ffd37a;
+      --festival-text: #fff7eb;
+      --festival-border: rgba(255, 173, 78, 0.35);
+      --festival-bg1: rgba(56, 25, 0, 0.92);
+      --festival-bg2: rgba(32, 14, 0, 0.9);
+      --festival-shadow: rgba(139, 60, 0, 0.45);
+    }
+
+    body.festival-valentine {
+      --festival-title: #ff96aa;
+      --festival-text: #ffeef2;
+      --festival-border: rgba(255, 150, 170, 0.35);
+      --festival-bg1: rgba(56, 7, 26, 0.92);
+      --festival-bg2: rgba(30, 3, 13, 0.9);
+      --festival-shadow: rgba(124, 20, 56, 0.45);
+    }
+
+    body.festival-holi {
+      --festival-title: #ffd38f;
+      --festival-text: #fffaf1;
+      --festival-border: rgba(255, 133, 56, 0.35);
+      --festival-bg1: rgba(43, 14, 79, 0.92);
+      --festival-bg2: rgba(14, 28, 56, 0.9);
+      --festival-shadow: rgba(79, 37, 164, 0.45);
+    }
+
+    body.festival-easter {
+      --festival-title: #b9ecb8;
+      --festival-text: #effff0;
+      --festival-border: rgba(123, 190, 122, 0.35);
+      --festival-bg1: rgba(28, 62, 32, 0.92);
+      --festival-bg2: rgba(18, 43, 22, 0.9);
+      --festival-shadow: rgba(31, 89, 38, 0.45);
+    }
+
+    body.festival-eid {
+      --festival-title: #98ffd2;
+      --festival-text: #ebfff7;
+      --festival-border: rgba(110, 232, 179, 0.35);
+      --festival-bg1: rgba(0, 64, 40, 0.92);
+      --festival-bg2: rgba(0, 38, 24, 0.9);
+      --festival-shadow: rgba(0, 93, 58, 0.45);
+    }
+
+    body.festival-ramadan {
+      --festival-title: #b0ffe0;
+      --festival-text: #ecfff8;
+      --festival-border: rgba(110, 232, 179, 0.35);
+      --festival-bg1: rgba(0, 52, 36, 0.92);
+      --festival-bg2: rgba(0, 30, 20, 0.9);
+      --festival-shadow: rgba(0, 93, 58, 0.45);
+    }
+
+    body.festival-eid-al-adha {
+      --festival-title: #ffe1a3;
+      --festival-text: #fff8ea;
+      --festival-border: rgba(248, 198, 110, 0.35);
+      --festival-bg1: rgba(64, 42, 0, 0.92);
+      --festival-bg2: rgba(35, 23, 0, 0.9);
+      --festival-shadow: rgba(125, 84, 0, 0.45);
+    }
+
+    body.festival-diwali {
+      --festival-title: #ffd682;
+      --festival-text: #fff7e5;
+      --festival-border: rgba(255, 172, 79, 0.4);
+      --festival-bg1: rgba(66, 28, 0, 0.92);
+      --festival-bg2: rgba(34, 15, 0, 0.9);
+      --festival-shadow: rgba(139, 62, 1, 0.45);
+    }
+
+    body.festival-christmas {
+      --festival-title: #b7ffd0;
+      --festival-text: #f2fff6;
+      --festival-border: rgba(132, 214, 157, 0.35);
+      --festival-bg1: rgba(11, 59, 29, 0.92);
+      --festival-bg2: rgba(7, 32, 16, 0.9);
+      --festival-shadow: rgba(15, 102, 50, 0.45);
+    }
+
+    @media (max-width: 768px) {
+      .festival-wish-card {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        width: auto;
+      }
+
+      .festival-wish-content {
+        border-radius: 24px;
+        padding: 14px 14px;
+      }
+
+      .festival-moon {
+        top: 64px;
+        right: 24px;
+        width: 68px;
+        height: 68px;
+      }
+
+      .festival-moon::after {
+        width: 56px;
+        height: 56px;
+      }
+
+      .festival-splash-inner.morph-to-card {
+        transform: translate3d(-10vw, 42vh, 0) scale(0.7);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .festival-wish-card {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+      }
+
+      .festival-wish-title {
+        font-size: 16px;
+      }
+
+      .festival-wish-sub {
+        font-size: 11px;
+      }
+
+      .festival-wish-text {
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .festival-wish-date {
+        font-size: 10px;
+      }
+
+      .festival-splash-content {
+        padding: 12px;
+      }
+
+      .festival-splash-inner {
+        border-radius: 22px;
+        padding: 16px 14px;
+      }
+
+      .festival-splash-title {
+        font-size: clamp(1.25rem, 6vw, 1.8rem);
+      }
+
+      .festival-moon {
+        top: 56px;
+        right: 14px;
+        width: 56px;
+        height: 56px;
+      }
+
+      .festival-moon::after {
+        width: 46px;
+        height: 46px;
+      }
+    }
   </style>
 </head>
 
@@ -1472,6 +1974,40 @@
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
+  <div class="festival-splash" id="festivalSplash">
+    <svg class="festival-splash-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path id="festivalSplashPath0" d="" fill="#001b17"></path>
+      <path id="festivalSplashPath1" d="" fill="#013228"></path>
+      <path id="festivalSplashPath2" d="" fill="#024034"></path>
+      <path id="festivalSplashPath3" d="" fill="#025248"></path>
+      <path id="festivalSplashPath4" d="" fill="#03675a"></path>
+    </svg>
+    <img class="festival-splash-logo" id="festivalSplashLogo" src="./index_files/logo.png" alt="AL AMAN logo" />
+    <div class="festival-splash-mist" aria-hidden="true"></div>
+    <div class="festival-splash-content" id="festivalSplashContent">
+      <div class="festival-splash-inner">
+        <span class="festival-splash-emoji" id="festivalSplashEmoji">✨</span>
+        <h2 class="festival-splash-title" id="festivalSplashTitle">Festival Wishes</h2>
+        <p class="festival-splash-text" id="festivalSplashText">Welcome to our special day greetings.</p>
+      </div>
+    </div>
+  </div>
+  <div class="festival-sky" id="festivalSky">
+    <canvas class="festival-sky-canvas" id="festivalSkyCanvas"></canvas>
+    <div class="festival-moon" aria-hidden="true"></div>
+  </div>
+  <div class="festival-wish-card" id="festivalWishCard">
+    <div class="festival-wish-content">
+      <div class="festival-wish-topline">
+        <span class="festival-wish-emoji" id="festivalWishEmoji">✨</span>
+        <span>Festival Special Day</span>
+      </div>
+      <h3 class="festival-wish-title" id="festivalWishTitle">Welcome!</h3>
+      <div class="festival-wish-sub" id="festivalWishSub">Auto festival wish</div>
+      <p class="festival-wish-text" id="festivalWishText">Loading today's wish...</p>
+      <div class="festival-wish-date" id="festivalWishDate"></div>
+    </div>
+  </div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const heroImages = document.querySelectorAll('.home-hero-picture');
@@ -1490,6 +2026,380 @@
       window.history.replaceState({}, "", "/");
     }
   </script>
+  <script>
+    (function () {
+      const WISHES = [
+        { key: "ramadan", emoji: "🕌", title: "Ramadan Mubarak", sub: "Month of Mercy, Prayer and Fasting", text: "May this Ramadan fill your days with peace, patience, and countless blessings.", month: 3, days: [1, 2, 3] },
+        { key: "eid", emoji: "🌙", title: "Eid Mubarak", sub: "Eid al-Fitr", text: "May Allah accept your fasting and prayers, and fill your home with happiness.", month: 4, days: [1, 2, 3] },
+        { key: "eid-al-adha", emoji: "🐐", title: "Eid al-Adha Mubarak", sub: "Festival of Sacrifice", text: "May this Eid al-Adha bring faith, gratitude, and barakah to you and your family.", month: 6, days: [6, 7, 8] }
+      ];
+
+      function getTodayWish() {
+        const now = new Date();
+        const month = now.getMonth() + 1;
+        const day = now.getDate();
+        const exactDayMatch = WISHES.find((wish) => wish.month === month && wish.days.includes(day));
+        if (exactDayMatch) {
+          return exactDayMatch;
+        }
+
+        const monthWishes = WISHES.filter((wish) => wish.month === month);
+        if (!monthWishes.length) {
+          return null;
+        }
+
+        if (monthWishes.length === 1) {
+          return monthWishes[0];
+        }
+
+        return monthWishes.reduce((closest, current) => {
+          const closestAnchor = closest.days[0] || 1;
+          const currentAnchor = current.days[0] || 1;
+          return Math.abs(currentAnchor - day) < Math.abs(closestAnchor - day) ? current : closest;
+        });
+      }
+
+      function clearFestivalThemeClass() {
+        document.body.classList.forEach((className) => {
+          if (className.indexOf("festival-") === 0) {
+            document.body.classList.remove(className);
+          }
+        });
+      }
+
+      const splashEl = document.getElementById("festivalSplash");
+      const splashPaths = [
+        document.getElementById("festivalSplashPath0"),
+        document.getElementById("festivalSplashPath1"),
+        document.getElementById("festivalSplashPath2"),
+        document.getElementById("festivalSplashPath3"),
+        document.getElementById("festivalSplashPath4")
+      ];
+      const splashContentEl = document.getElementById("festivalSplashContent");
+      const splashInnerEl = document.querySelector(".festival-splash-inner");
+      const splashEmojiEl = document.getElementById("festivalSplashEmoji");
+      const splashTitleEl = document.getElementById("festivalSplashTitle");
+      const splashTextEl = document.getElementById("festivalSplashText");
+      const splashLogoEl = document.getElementById("festivalSplashLogo");
+      const SPLASH_COLORS = {
+        ramadan: ["rgba(0,25,19,0.62)", "rgba(1,48,37,0.58)", "rgba(2,65,54,0.54)", "rgba(5,100,86,0.5)", "rgba(10,130,115,0.46)"],
+        eid: ["rgba(0,30,22,0.62)", "rgba(1,52,40,0.58)", "rgba(1,74,55,0.54)", "rgba(10,106,80,0.5)", "rgba(23,133,106,0.46)"],
+        "eid-al-adha": ["rgba(42,29,0,0.62)", "rgba(75,52,0,0.58)", "rgba(107,74,0,0.54)", "rgba(141,98,8,0.5)", "rgba(177,126,28,0.46)"],
+        default: ["rgba(0,25,19,0.62)", "rgba(1,48,37,0.58)", "rgba(2,65,54,0.54)", "rgba(5,100,86,0.5)", "rgba(10,130,115,0.46)"]
+      };
+
+      function easeInOut(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      }
+
+      function wavePath(progress, layer, phase) {
+        const p = Math.max(0, Math.min(1, progress));
+        if (p <= 0) {
+          return "";
+        }
+        if (p >= 1) {
+          return "M0 0 L100 0 L100 100 L0 100 Z";
+        }
+
+        const lead = p * 140 - 20 - layer * 4;
+        const clampedLead = Math.max(-10, Math.min(110, lead));
+        let d = "M0 0 ";
+        const step = 2;
+        for (let y = 0; y <= 100; y += step) {
+          const bend = Math.sin(y * 0.16 + phase + layer * 0.7) * (2.8 + layer * 0.22);
+          const x = Math.max(0, Math.min(100, clampedLead + bend));
+          d += "L" + x.toFixed(2) + " " + y + " ";
+        }
+        d += "L0 100 Z";
+        return d;
+      }
+
+      function runFestivalSplash(wish, onMorphStart) {
+      if (!splashEl || splashPaths.some((item) => !item) || !wish) {
+          return Promise.resolve();
+        }
+
+        const colors = SPLASH_COLORS[wish.key] || SPLASH_COLORS.default;
+        for (let i = 0; i < splashPaths.length; i++) {
+          splashPaths[i].setAttribute("fill", colors[i] || colors[colors.length - 1]);
+        }
+        if (splashEmojiEl) {
+          splashEmojiEl.textContent = wish.emoji;
+        }
+        if (splashTitleEl) {
+          splashTitleEl.textContent = wish.title;
+        }
+        if (splashTextEl) {
+          splashTextEl.textContent = wish.text;
+        }
+
+        splashEl.classList.remove("fade-out");
+        splashEl.style.display = "block";
+        splashEl.style.opacity = "1";
+        if (splashContentEl) {
+          splashContentEl.classList.remove("show");
+        }
+        if (splashInnerEl) {
+          splashInnerEl.classList.remove("morph-to-card");
+        }
+        if (splashLogoEl) {
+          splashLogoEl.classList.remove("show");
+          // force restart transition for repeated runs
+          void splashLogoEl.offsetWidth;
+          splashLogoEl.classList.add("show");
+        }
+
+        return new Promise((resolve) => {
+          const logoLeadIn = 420;
+          const duration = 1150;
+          const holdDuration = 1250;
+          const start = performance.now();
+
+          function frame(now) {
+            const elapsed = now - start - logoLeadIn;
+            if (elapsed < 0) {
+              requestAnimationFrame(frame);
+              return;
+            }
+
+            const raw = Math.min(1, elapsed / duration);
+            const eased = easeInOut(raw);
+            const phase = elapsed * 0.02;
+
+            for (let i = 0; i < splashPaths.length; i++) {
+              const path = wavePath(eased - i * 0.075, i, phase);
+              splashPaths[i].setAttribute("d", path);
+            }
+
+            if (raw < 1) {
+              requestAnimationFrame(frame);
+              return;
+            }
+
+            if (splashLogoEl) {
+              splashLogoEl.classList.remove("show");
+            }
+            if (splashContentEl) {
+              splashContentEl.classList.add("show");
+            }
+
+            setTimeout(() => {
+              if (splashInnerEl) {
+                splashInnerEl.classList.add("morph-to-card");
+              }
+              if (typeof onMorphStart === "function") {
+                onMorphStart();
+              }
+              setTimeout(() => {
+              splashEl.classList.add("fade-out");
+              setTimeout(() => {
+                if (splashContentEl) {
+                  splashContentEl.classList.remove("show");
+                }
+                splashEl.style.display = "none";
+                splashEl.classList.remove("fade-out");
+                if (splashInnerEl) {
+                  splashInnerEl.classList.remove("morph-to-card");
+                }
+                resolve();
+              }, 960);
+              }, 540);
+            }, holdDuration);
+          }
+
+          requestAnimationFrame(frame);
+        });
+      }
+
+      const skyCanvas = document.getElementById("festivalSkyCanvas");
+      const skyContext = skyCanvas ? skyCanvas.getContext("2d") : null;
+      let skyWidth = 0;
+      let skyHeight = 0;
+      let animationFrameId = null;
+      let stars = [];
+      let fallingStars = [];
+      let isSkyRunning = false;
+
+      function resizeSky() {
+        if (!skyCanvas) {
+          return;
+        }
+        skyWidth = window.innerWidth;
+        skyHeight = window.innerHeight;
+        skyCanvas.width = Math.floor(skyWidth * (window.devicePixelRatio || 1));
+        skyCanvas.height = Math.floor(skyHeight * (window.devicePixelRatio || 1));
+        skyCanvas.style.width = skyWidth + "px";
+        skyCanvas.style.height = skyHeight + "px";
+        skyContext.setTransform(window.devicePixelRatio || 1, 0, 0, window.devicePixelRatio || 1, 0, 0);
+      }
+
+      function buildStaticStars() {
+        stars = Array.from({ length: 34 }, () => ({
+          x: Math.random() * skyWidth,
+          y: Math.random() * skyHeight * 0.72,
+          r: Math.random() * 1.6 + 0.4,
+          twinkle: Math.random() * Math.PI * 2,
+          speed: Math.random() * 0.025 + 0.01,
+          vx: (Math.random() - 0.5) * 0.16,
+          vy: Math.random() * 0.08 + 0.03
+        }));
+      }
+
+      function spawnFallingStar() {
+        fallingStars.push({
+          x: Math.random() * skyWidth,
+          y: -20,
+          vx: -(Math.random() * 0.8 + 0.5),
+          vy: Math.random() * 1.7 + 2.2,
+          life: 1
+        });
+      }
+
+      function drawSky() {
+        if (!skyContext || !isSkyRunning) {
+          return;
+        }
+
+        skyContext.clearRect(0, 0, skyWidth, skyHeight);
+
+        for (let i = 0; i < stars.length; i++) {
+          const star = stars[i];
+          star.x += star.vx;
+          star.y += star.vy;
+          if (star.x < -4) {
+            star.x = skyWidth + 4;
+          } else if (star.x > skyWidth + 4) {
+            star.x = -4;
+          }
+          if (star.y > skyHeight * 0.78) {
+            star.y = -4;
+          }
+
+          star.twinkle += star.speed;
+          const alpha = 0.28 + (Math.sin(star.twinkle) + 1) * 0.24;
+          skyContext.fillStyle = "rgba(255,244,199," + alpha.toFixed(3) + ")";
+          skyContext.beginPath();
+          skyContext.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+          skyContext.fill();
+        }
+
+        if (Math.random() < 0.02 && fallingStars.length < 3) {
+          spawnFallingStar();
+        }
+
+        for (let i = fallingStars.length - 1; i >= 0; i--) {
+          const p = fallingStars[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          p.life -= 0.012;
+
+          skyContext.strokeStyle = "rgba(255,233,155," + Math.max(0, p.life) + ")";
+          skyContext.lineWidth = 1.6;
+          skyContext.beginPath();
+          skyContext.moveTo(p.x, p.y);
+          skyContext.lineTo(p.x - p.vx * 9, p.y - p.vy * 9);
+          skyContext.stroke();
+
+          if (p.life <= 0 || p.y > skyHeight + 25 || p.x < -30) {
+            fallingStars.splice(i, 1);
+          }
+        }
+
+        animationFrameId = window.requestAnimationFrame(drawSky);
+      }
+
+      function startFestivalSky() {
+        if (!skyContext || isSkyRunning) {
+          return;
+        }
+        isSkyRunning = true;
+        resizeSky();
+        buildStaticStars();
+        fallingStars = [];
+        drawSky();
+      }
+
+      function stopFestivalSky() {
+        isSkyRunning = false;
+        if (animationFrameId) {
+          window.cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+        if (skyContext) {
+          skyContext.clearRect(0, 0, skyWidth, skyHeight);
+        }
+      }
+
+      window.addEventListener("resize", () => {
+        if (!isSkyRunning) {
+          return;
+        }
+        resizeSky();
+        buildStaticStars();
+      });
+
+      async function applyTodayWish() {
+        const wish = getTodayWish();
+        const cardEl = document.getElementById("festivalWishCard");
+        const emojiEl = document.getElementById("festivalWishEmoji");
+        const titleEl = document.getElementById("festivalWishTitle");
+        const subEl = document.getElementById("festivalWishSub");
+        const textEl = document.getElementById("festivalWishText");
+        const dateEl = document.getElementById("festivalWishDate");
+
+        if (!cardEl || !emojiEl || !titleEl || !subEl || !textEl || !dateEl) {
+          return;
+        }
+
+        clearFestivalThemeClass();
+
+        if (!wish) {
+          document.body.classList.remove("festival-active");
+          cardEl.classList.remove("visible");
+          if (splashEl) {
+            splashEl.style.display = "none";
+          }
+          stopFestivalSky();
+          return;
+        }
+
+        const now = new Date();
+        const dateText = now.toLocaleDateString("en-US", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        });
+
+        emojiEl.textContent = wish.emoji;
+        titleEl.textContent = wish.title;
+        subEl.textContent = wish.sub;
+        textEl.textContent = wish.text;
+        dateEl.textContent = "Date: " + dateText;
+
+        document.body.classList.add("festival-" + wish.key);
+        document.body.classList.add("festival-active");
+
+        const splashSeenKey = "festival_splash_seen_v1";
+        const shouldShowSplash = !sessionStorage.getItem(splashSeenKey);
+
+        if (shouldShowSplash) {
+          cardEl.classList.remove("visible");
+          await runFestivalSplash(wish, () => {
+            cardEl.classList.add("visible");
+            startFestivalSky();
+          });
+          sessionStorage.setItem(splashSeenKey, "1");
+          return;
+        }
+
+        cardEl.classList.add("visible");
+        startFestivalSky();
+      }
+
+      document.addEventListener("DOMContentLoaded", applyTodayWish);
+    })();
+  </script>
 </body>
 <script>
   const scrollBtn = document.getElementById('scrollToTop');
@@ -1502,3 +2412,4 @@
 </script>
 
 </html>
+
