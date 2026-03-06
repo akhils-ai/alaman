@@ -13,15 +13,8 @@
       return;
     }
 
-    var path = window.location.pathname;
-    var cleanPath = path
-      .replace(/index(?:\.html)?$/i, "")
-      .replace(/\.html$/i, "");
-
-    if (!cleanPath) cleanPath = "/";
-
-    if (cleanPath !== path) {
-      window.history.replaceState(null, "", cleanPath + window.location.search + window.location.hash);
+    if (!window.location.pathname.startsWith("/admin") && window.location.pathname !== "/") {
+      window.history.replaceState(null, "", "/");
     }
   })();
 </script>    <meta charset="UTF-8">
