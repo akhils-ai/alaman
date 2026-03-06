@@ -1,3 +1,8 @@
+http://www.alaman.in/:page.html https://alaman.in/:page 301!
+https://www.alaman.in/:page.html https://alaman.in/:page 301!
+http://www.alaman.in/category/:page.html https://alaman.in/category/:page 301!
+https://www.alaman.in/category/:page.html https://alaman.in/category/:page 301!
+
 http://alaman.in/* https://alaman.in/:splat 301!
 http://www.alaman.in/* https://alaman.in/:splat 301!
 https://www.alaman.in/* https://alaman.in/:splat 301!
