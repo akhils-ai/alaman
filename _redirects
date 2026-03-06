@@ -10,10 +10,6 @@ https://gorgeous-platypus-fd8e42.netlify.app/* https://alaman.in/:splat 301!
 /index.html/admin /admin/ 301
 /index.html/admin/* /admin/:splat 301
 
-# Clean URLs (hide .html)
-/index.html / 301!
-/:page.html /:page 301!
-/category/:page.html /category/:page 301!
+# Hide all public URLs: always redirect to homepage
 / /index.html 200
-/:page /:page.html 200
-/category/:page /category/:page.html 200
+/* / 301!
