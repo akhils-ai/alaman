@@ -3,20 +3,23 @@ https://www.alaman.in/:page.html https://alaman.in/:page 301!
 http://www.alaman.in/category/:page.html https://alaman.in/category/:page 301!
 https://www.alaman.in/category/:page.html https://alaman.in/category/:page 301!
 
-http://alaman.netlify.app/* https://alaman.in/admin 301!
-https://alaman.netlify.app/* https://alaman.in/admin 301!
+http://alaman.netlify.app/* https://alaman.in/login 301!
+https://alaman.netlify.app/* https://alaman.in/login 301!
 
 http://alaman.in/* https://alaman.in/:splat 301!
 http://www.alaman.in/* https://alaman.in/:splat 301!
 https://www.alaman.in/* https://alaman.in/:splat 301!
 https://gorgeous-platypus-fd8e42.netlify.app/* https://alaman.in/:splat 301!
 
-/admin /admin/ 301
-/admin/login /admin/ 302
+/admin /login 301
+/admin/ /login 301
+/admin/login /login 302
+/login /admin/ 200
+/login/ /admin/ 200
 /admin/config.yml /admin/config.yml 200
 /admin/index.html /admin/index.html 200
 /admin/* /admin/index.html 200
-/index.html/admin /admin/ 301
+/index.html/admin /login 301
 /index.html/admin/* /admin/:splat 301
 
 # Clean URLs
