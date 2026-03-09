@@ -98,6 +98,20 @@
         "https://alqamees.s3.us-east-2.amazonaws.com/wp-content/uploads/2026/02/03103756/A-OC-014.-Omani-Fancy-Olive-green-1.webp",
       ],
       "gender": "MALE"
+    },
+    {
+      "id": "Cap-China",
+      "name": "China Cap ",
+      "category": "hat",
+      "sub_category": "China Cap",
+      "description": "This exquisitely constructed kufi combines creativity and artistry. The precise topstitching on the top and sides is done in alternate directions, and they come together in such a pleasing way that it almost resembles a piece of art. The fabric has a subtle sheen and is made of premium cotton, giving it a contemporary, clean appearance. The same premium cotton that was used to make the exterior portion is also used to line the interior.",
+      "price": "₹ 70",
+      "images": [
+        "https://image.made-in-china.com/203f0j00lWKvOUnhAgcE/Durable-Men-s-Muslim-Prayer-Cap-Hat-for-Adults-All-Seasons.webp",
+        "https://image.made-in-china.com/203f0j00FhZBKdyJKukz/Durable-Men-s-Muslim-Prayer-Cap-Hat-for-Adults-All-Seasons.webp",
+        "https://image.made-in-china.com/203f0j00AlKvjUFsypbz/Durable-Men-s-Muslim-Prayer-Cap-Hat-for-Adults-All-Seasons.webp"
+      ],
+      "gender": "MALE"
     }
   ]
 }
