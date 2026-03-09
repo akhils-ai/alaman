@@ -5,22 +5,7 @@
 
 <head>
 <script id="clean-url-path">
-  (function () {
-    var path = window.location.pathname;
-
-    if (/\/index\.html$/i.test(path)) {
-      window.history.replaceState(null, "", "/" + window.location.search + window.location.hash);
-      return;
-    }
-
-    if (/\.html$/i.test(path) && !path.startsWith("/admin")) {
-      window.history.replaceState(
-        null,
-        "",
-        path.replace(/\.html$/i, "") + window.location.search + window.location.hash
-      );
-    }
-  })();
+  /* Disabled: extensionless URL rewrite causes 404 on refresh for static hosting */
 </script>    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <base href="/">
     <style>
@@ -128,9 +113,17 @@
     }
   </style>
   <script>
-    if (window.location.pathname !== "/404.html") {
-      window.history.replaceState({}, "", "/404.html");
-    }
+    (function () {
+      var path = window.location.pathname || "/";
+      if (path === "/" || path === "/404.html" || path === "/404") return;
+      if (/\.[a-z0-9]+$/i.test(path)) return;
+
+      var normalized = path.endsWith("/") ? path.slice(0, -1) : path;
+      if (!normalized) return;
+
+      var target = normalized + ".html" + window.location.search + window.location.hash;
+      window.location.replace(target);
+    })();
   </script>
   <script>
     (function () {
