@@ -42,6 +42,20 @@
       "description": "Discover the latest collection of Arabic modest dress abayas. Our selection features a variety of styles and designs to suit your fashion needs. Shop now and find the perfect abaya to elevate your wardrobe.",
       "sub_category": "Abaya",
       "category": "Abaya"
-    }
+    },
+    {
+      "id": "perfumes",
+      "name": "",
+      "category": "perfumes",
+      "sub_category": "AGARBATTI",
+      "description": "Experience a peaceful and refreshing atmosphere with our premium quality agarbatti, specially crafted to fill your home with a divine and soothing aroma. Made from carefully selected natural ingredients, these incense sticks create a calming environment perfect for prayer, meditation, yoga, and relaxation.",
+      "price": "₹ 150",
+      "images": [
+        "https://sriprarthana.com/cdn/shop/files/288F3427-AC82-4637-8C6A-0BFCB100EF61.jpg?v=1749406435&width=720",
+        "https://sriprarthana.com/cdn/shop/files/3B33A88D-0C2E-4538-A340-14BFC836C6A6.jpg?v=1749406435&width=720",
+        "https://sriprarthana.com/cdn/shop/files/672AE93E-5752-4680-BF81-C1CC98FC5F9F.jpg?v=1749406435&width=720",
+      ],
+      "gender": ""
+    },
   ]
 }
