@@ -15,22 +15,23 @@
       justify-content: center;
       align-items: flex-start;
       min-height: 100vh;
-      padding: 40px 16px;
+      padding: clamp(16px, 5vw, 40px) clamp(10px, 4vw, 16px);
     }
 
     .card {
       background: #fff;
       border: 1.5px solid rgba(180,140,80,0.25);
-      border-radius: 40px;
+      border-radius: clamp(20px, 5vw, 40px);
       width: 100%;
       max-width: 620px;
       overflow: hidden;
       box-shadow: 0 8px 40px rgba(180,140,80,0.12);
     }
 
+    /* ── Header ── */
     .card-header {
       background: #1a1a1a;
-      padding: 36px 28px 24px;
+      padding: clamp(20px, 5vw, 36px) clamp(16px, 4vw, 28px) clamp(16px, 4vw, 24px);
       text-align: center;
       position: relative;
     }
@@ -43,53 +44,60 @@
     }
 
     .logo-circle {
-      width: 86px;
-      height: 86px;
+      width: clamp(60px, 16vw, 86px);
+      height: clamp(60px, 16vw, 86px);
       border-radius: 50%;
       border: 2.5px solid rgba(201,169,110,0.6);
-      margin: 0 auto 14px;
+      margin: 0 auto clamp(10px, 2.5vw, 14px);
       display: flex;
       align-items: center;
       justify-content: center;
       background: #222;
       overflow: hidden;
     }
-    .logo-circle img { width: 68px; height: 68px; object-fit: contain; border-radius: 50%; }
+    .logo-circle img {
+      width: 80%; height: 80%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
 
     .store-name {
       font-family: 'El Messiri', serif;
-      font-size: 28px;
+      font-size: clamp(19px, 5.5vw, 28px);
       font-weight: 700;
       color: #c9a96e;
       letter-spacing: 0.18em;
     }
     .store-tagline {
       font-family: 'Tajawal', sans-serif;
-      font-size: 13px;
+      font-size: clamp(10px, 2.8vw, 13px);
       color: rgba(255,255,255,0.45);
       letter-spacing: 0.06em;
       margin-top: 5px;
       font-weight: 300;
     }
 
+    /* ── Grid ── */
     .links-grid {
-      padding: 24px;
+      padding: clamp(12px, 4vw, 24px);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: clamp(8px, 2.5vw, 14px);
     }
 
+    /* ── Link cards ── */
     .link-item {
       display: flex;
       align-items: center;
-      gap: 13px;
+      gap: clamp(8px, 2.5vw, 13px);
       background: #faf8f4;
       border: 1px solid rgba(180,140,80,0.18);
-      border-radius: 16px;
-      padding: 16px 16px;
+      border-radius: clamp(12px, 3vw, 16px);
+      padding: clamp(11px, 3vw, 16px) clamp(10px, 3vw, 16px);
       text-decoration: none;
       cursor: pointer;
       transition: all 0.22s ease;
+      min-width: 0;
     }
     .link-item:hover {
       background: #fff8ec;
@@ -99,18 +107,25 @@
     }
     .link-item.full { grid-column: 1 / -1; }
 
+    /* ── Icon wrap ── */
     .icon-wrap {
-      width: 50px; height: 50px;
-      border-radius: 14px;
+      width: clamp(36px, 10vw, 50px);
+      height: clamp(36px, 10vw, 50px);
+      border-radius: clamp(9px, 2.5vw, 14px);
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .icon-wrap svg { width: 24px; height: 24px; }
+    .icon-wrap svg {
+      width: clamp(17px, 4.5vw, 24px);
+      height: clamp(17px, 4.5vw, 24px);
+    }
 
+    /* ── Text ── */
     .link-text { flex: 1; min-width: 0; }
+
     .link-label {
       font-family: 'Tajawal', sans-serif;
-      font-size: 11px;
+      font-size: clamp(9px, 2.2vw, 11px);
       color: #a08050;
       letter-spacing: 0.08em;
       font-weight: 700;
@@ -118,68 +133,41 @@
     }
     .link-value {
       font-family: 'El Messiri', serif;
-      font-size: 15px;
+      font-size: clamp(12px, 3.2vw, 15px);
       font-weight: 600;
       color: #1a1a1a;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
-    .wa  { background: #e8faf0; }
-    .wa  svg { fill: #25d366; }
-    .ig  { background: #fde8f0; }
-    .ig  svg { fill: #e1306c; }
-    .fb  { background: #e8f0fd; }
-    .fb  svg { fill: #1877f2; }
+    /* ── Icon colours ── */
+    .wa  { background: #e8faf0; } .wa  svg { fill: #25d366; }
+    .ig  { background: #fde8f0; } .ig  svg { fill: #e1306c; }
+    .fb  { background: #e8f0fd; } .fb  svg { fill: #1877f2; }
     .web { background: #fdf5e8; }
     .ph  { background: #e8f5fd; }
     .loc { background: #fde8e8; }
     .gr  { background: #e8f4ec; }
 
-    .arrow-icon { width: 14px; height: 14px; flex-shrink: 0; }
-
-    .divider { height: 1px; background: rgba(180,140,80,0.12); margin: 0 24px; }
-
-    .card-footer {
-      padding: 14px 24px;
-      text-align: center;
-      font-family: 'Tajawal', sans-serif;
-      font-size: 12px;
-      color: #b0956a;
-      letter-spacing: 0.05em;
-      font-weight: 400;
+    /* ── Arrow ── */
+    .arrow-icon {
+      width: clamp(11px, 2.5vw, 14px);
+      height: clamp(11px, 2.5vw, 14px);
+      flex-shrink: 0;
     }
 
-    @media (max-width: 480px) {
-      body { padding: 20px 12px; }
-      .card { border-radius: 22px; }
-      .card-header { padding: 28px 20px 20px; }
-      .logo-circle { width: 70px; height: 70px; }
-      .logo-circle img { width: 54px; height: 54px; }
-      .store-name { font-size: 22px; }
-      .store-tagline { font-size: 11px; }
-      .links-grid { padding: 16px; gap: 10px; grid-template-columns: 1fr 1fr; }
-      .link-item { padding: 13px 12px; gap: 10px; border-radius: 13px; }
-      .link-item.full { grid-column: 1 / -1; }
-      .icon-wrap { width: 42px; height: 42px; border-radius: 11px; }
-      .icon-wrap svg { width: 20px; height: 20px; }
-      .link-label { font-size: 10px; }
-      .link-value { font-size: 13px; }
-      .divider { margin: 0 16px; }
-      .card-footer { font-size: 11px; padding: 12px 16px; }
-    }
-
-    @media (max-width: 360px) {
+    /* ── Very small phones: single column ── */
+    @media (max-width: 340px) {
       .links-grid { grid-template-columns: 1fr; }
       .link-item.full { grid-column: 1; }
     }
   </style>
 </head>
 <body>
-
   <div class="card">
+
     <div class="card-header">
       <div class="logo-circle">
         <img src="https://alaman.in/index_files/logo.png" alt="AL AMAN"
@@ -249,7 +237,7 @@
         </div>
         <div class="link-text">
           <div class="link-label">CALL US</div>
-          <div class="link-value">+91 90728 00131</div>
+          <div class="link-value">+91 98952 49545</div>
         </div>
       </a>
 
@@ -271,7 +259,6 @@
       <a class="link-item full" href="https://www.google.com/search?q=Al+Aman+Islamic+Store&biw=1536&bih=730&sca_esv=59b2ea9ff3a4eeff&sxsrf=ANbL-n4l96mmiD1PexEi9GR1cd1ditPc6w%3A1774248238106&ei=LuHAafyYBvSfseMP6s7WgQQ&ved=0ahUKEwj85-bftbWTAxX0T2wGHWqnNUAQ4dUDCBE&uact=5&oq=Al+Aman+Islamic+Store&gs_lp=Egxnd3Mtd2l6LXNlcnAiFUFsIEFtYW4gSXNsYW1pYyBTdG9yZTILEC4YgAQYxwEYrwEyAhAmMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCBAAGIAEGKIEMgUQABjvBTIIEAAYgAQYogQyCBAAGIAEGKIEMhoQLhiABBjHARivARiXBRjcBBjeBBjgBNgBAUiDBlAAWABwAHgAkAEAmAGhAaABoQGqAQMwLjG4AQPIAQD4AQL4AQGYAgGgAqgBmAMAugYGCAEQARgUkgcDMC4xoAePCbIHAzAuMbgHqAHCBwMyLTHIBwWACAA&sclient=gws-wiz-serp#lrd=0x3b089b9aad3c3715:0xbf3e0ce558c27947,3,,,," target="_blank">
         <div class="icon-wrap gr">
           <svg viewBox="0 0 24 24" width="24" height="24">
-            <!-- Google G logo -->
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
             <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
@@ -286,9 +273,6 @@
       </a>
 
     </div>
-
-    <div class="divider"></div>
-    <!-- <div class="card-footer">Alappuzha, Kerala &nbsp;·&nbsp; contact@alaman.com</div> -->
   </div>
 
 </body>
