@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Madarassa - AL AMAN</title>
+
+  <!-- Your existing CSS -->
+  <link href="./index_files/alaman7d.css" rel="stylesheet" type="text/css" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .pdf-section {
+      padding: 60px 20px;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .pdf-section h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .pdf-section p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .pdf-btn {
+      background: #0a7f5a;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .pdf-btn:hover {
+      background: #055c40;
+    }
+
+    iframe {
+      width: 100%;
+      height: 80vh;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      background: #0a7f5a;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .back {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SIMPLE HEADER -->
+  <div class="header">
+    <a href="index.html" class="back">⬅ Back</a>
+    Madarassa Book Catalogue
+  </div>
+
+  <!-- PDF SECTION -->
+  <section class="pdf-section">
+
+    <h2>Madarassa Book Catalogue</h2>
+    <p>Explore our complete Islamic Educational Board book list</p>
+
+    <!-- Button -->
+    <a href="assets/pdf/pdf24_converted%20(1).pdf" target="_blank" class="pdf-btn">
+      📄 Open Full PDF
+    </a>
+
+    <!-- PDF Viewer -->
+    <iframe src="assets/pdf/pdf24_converted%20(1).pdf"></iframe>
+
+  </section>
+
+</body>
+</html>
