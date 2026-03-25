@@ -180,8 +180,7 @@
     }
 
     /* ═══════════════════════════════════════════════
-       4 IMAGE CARDS — same hover style as index.html
-       .home-trending-post / .home-trending-overlay
+       6 IMAGE CARDS — same hover style as index.html
     ═══════════════════════════════════════════════ */
     .mad-cards-section {
       padding: 80px 20px 100px;
@@ -191,8 +190,6 @@
       max-width: 1140px;
       margin: 0 auto;
     }
-
-    /* header */
     .mad-cards-header {
       text-align: center;
       margin-bottom: 52px;
@@ -224,14 +221,14 @@
       font-size: 14px; color: #999; margin: 0;
     }
 
-    /* grid */
+    /* ── 6-col grid: 3+3 layout ── */
     .mad-cards-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    /* ── card: mirrors .home-trending-post exactly ── */
+    /* card */
     .mad-post {
       position: relative;
       overflow: hidden;
@@ -241,8 +238,6 @@
       aspect-ratio: 3 / 4;
       background: #111;
     }
-
-    /* the photo — mirrors .home-trending-image */
     .mad-post-image {
       width: 100%; height: 100%;
       object-fit: cover;
@@ -252,8 +247,6 @@
     .mad-post:hover .mad-post-image {
       transform: scale(1.07);
     }
-
-    /* bottom text wrap — mirrors .home-trending-wrap */
     .mad-post-wrap {
       position: absolute;
       bottom: 0; left: 0; right: 0;
@@ -275,20 +268,15 @@
       margin: 0;
     }
 
-    /* overlay — EXACT same animation as .home-trending-overlay in index.html */
+    /* overlay — exact same expanding animation as index.html */
     .mad-post-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(10, 127, 90, 0.55);   /* green tint matching brand */
+      background: rgba(10, 127, 90, 0.55);
       z-index: 1;
-
-      /* start: hidden below the card */
       width: 0%;
       height: 0%;
-
-      /* same transition the index uses (Webflow sets width/height) */
       transition: width 0.4s ease, height 0.4s ease;
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -297,8 +285,6 @@
       width: 100%;
       height: 100%;
     }
-
-    /* arrow icon inside overlay — mirrors index button icon */
     .mad-post-overlay-icon {
       opacity: 0;
       transform: scale(0.7) translateY(10px);
@@ -310,7 +296,7 @@
       transform: scale(1) translateY(0);
     }
 
-    /* pill badge top-left */
+    /* badge */
     .mad-post-badge {
       position: absolute;
       top: 14px; left: 14px;
@@ -325,13 +311,16 @@
     .mad-post-badge--green { background: rgba(10,127,90,0.9); }
     .mad-post-badge--gold  { background: rgba(160,128,80,0.9); }
 
-    @media (max-width: 860px) {
-      .mad-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    /* responsive */
+    @media (max-width: 900px) {
+      .mad-cards-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    }
+    @media (max-width: 640px) {
+      .mad-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .mad-post-name { font-size: 15px; }
     }
     @media (max-width: 480px) {
       .mad-cards-section { padding: 52px 14px 68px; }
-      .mad-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .mad-post-name { font-size: 16px; }
     }
   </style>
 </head>
@@ -412,93 +401,41 @@
                   </div>
                 </nav>
               </div>
-              <div data-delay="500" data-hover="true" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff39f"
-                class="header-dropdown w-dropdown">
+              <div data-delay="500" data-hover="true" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff39f" class="header-dropdown w-dropdown">
                 <div class="header-dropdown-toggle w-dropdown-toggle">
                   <div class="header-nav-text">Souq</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 8" fill="none"
-                    class="header-dropdown-icon">
-                    <path
-                      d="M5.99983 7.33316C5.89016 7.3338 5.78144 7.31278 5.67991 7.2713C5.57838 7.22983 5.48603 7.16873 5.40816 7.0915L0.408162 2.0915C0.251243 1.93458 0.163086 1.72175 0.163086 1.49983C0.163086 1.27791 0.251243 1.06508 0.408162 0.908162C0.565082 0.751243 0.777911 0.663086 0.999829 0.663086C1.22175 0.663086 1.43458 0.751243 1.5915 0.908162L5.99983 5.32483L10.4082 0.916496C10.5676 0.779974 10.7726 0.708635 10.9824 0.716736C11.1921 0.724837 11.3911 0.811781 11.5395 0.960193C11.6879 1.10861 11.7748 1.30755 11.7829 1.51728C11.791 1.72701 11.7197 1.93208 11.5832 2.0915L6.58316 7.0915C6.42794 7.24545 6.21845 7.33224 5.99983 7.33316Z"
-                      fill="currentColor"></path>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 8" fill="none" class="header-dropdown-icon">
+                    <path d="M5.99983 7.33316C5.89016 7.3338 5.78144 7.31278 5.67991 7.2713C5.57838 7.22983 5.48603 7.16873 5.40816 7.0915L0.408162 2.0915C0.251243 1.93458 0.163086 1.72175 0.163086 1.49983C0.163086 1.27791 0.251243 1.06508 0.408162 0.908162C0.565082 0.751243 0.777911 0.663086 0.999829 0.663086C1.22175 0.663086 1.43458 0.751243 1.5915 0.908162L5.99983 5.32483L10.4082 0.916496C10.5676 0.779974 10.7726 0.708635 10.9824 0.716736C11.1921 0.724837 11.3911 0.811781 11.5395 0.960193C11.6879 1.10861 11.7748 1.30755 11.7829 1.51728C11.791 1.72701 11.7197 1.93208 11.5832 2.0915L6.58316 7.0915C6.42794 7.24545 6.21845 7.33224 5.99983 7.33316Z" fill="currentColor"></path>
                   </svg>
                 </div>
                 <nav class="header-dropdown-list w-dropdown-list">
                   <div class="header-mega-block header-shop-block" style="min-width:0; width:auto;">
-                    <!-- <div class="header-mega-wrap shop-product">
-                      <div class="header-list-wrapper w-dyn-list">
-                        <div role="list" class="header-list trending-collection w-dyn-items">
-                          <div role="listitem" class="header-item w-dyn-item">
-                            <a href="./menswears.html" class="header-tag-block w-inline-block">
-                              <div class="header-tag-wrap">
-                                <h6 class="header-tag-title">Mens wear Collections</h6>
-                                <div class="header-tag-name">Trending</div>
-                              </div>
-                              <div class="header-tag-except">Explore our latest Mens wear styles crafted for elegance,
-                                comfort, and timeless modest fashion.</div>
-                            </a>
-                          </div>
-                          <div role="listitem" class="header-item w-dyn-item">
-                            <a href="./ladieswear.html" class="header-tag-block w-inline-block">
-                              <div class="header-tag-wrap">
-                                <h6 class="header-tag-title">Ladies Collections</h6>
-                                <div class="header-tag-name">Trending</div>
-                              </div>
-                              <div class="header-tag-except">Discover elegant Ladies designed for modern modesty, grace,
-                                and everyday sophistication.</div>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
-                    <!-- <div id="w-node-_0610b262-7f60-3f1d-ea57-66ff4a1ff3ca-4a1ff396" class="header-mega-line"></div> -->
                     <div class="header-mega-right">
                       <div class="header-mega-wrap">
                         <h6 class="header-nav-title category">Categories</h6>
                         <div class="header-list-wrapper w-dyn-list">
                           <div role="list" class="header-list w-dyn-items">
                             <div role="listitem" class="header-item w-dyn-item">
-                              <a href="./menswears.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2"
-                                class="header-nav-link w-inline-block">
-                                <div class="header-nav-dot"></div>
-                                <div class="header-nav-text">Ramadan Souq</div>
-                              </a>
+                              <a href="./menswears.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2" class="header-nav-link w-inline-block"><div class="header-nav-dot"></div><div class="header-nav-text">Ramadan Souq</div></a>
                             </div>
                             <div role="listitem" class="header-item w-dyn-item">
-                              <a href="./ladieswear.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2"
-                                class="header-nav-link w-inline-block">
-                                <div class="header-nav-dot"></div>
-                                <div class="header-nav-text">Haji bazar</div>
-                              </a>
+                              <a href="./ladieswear.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2" class="header-nav-link w-inline-block"><div class="header-nav-dot"></div><div class="header-nav-text">Haji bazar</div></a>
                             </div>
                             <div role="listitem" class="header-item w-dyn-item">
-                              <a href="./Madarassa.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2"
-                                class="header-nav-link w-inline-block">
-                                <div class="header-nav-dot"></div>
-                                <div class="header-nav-text">Madarssa Market</div>
-                              </a>
+                              <a href="./Madarassa.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2" class="header-nav-link w-inline-block"><div class="header-nav-dot"></div><div class="header-nav-text">Madarssa Market</div></a>
                             </div>
                             <div role="listitem" class="header-item w-dyn-item">
-                              <a href="./book.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2"
-                                class="header-nav-link w-inline-block">
-                                <div class="header-nav-dot"></div>
-                                <div class="header-nav-text">Milad Souq</div>
-                              </a>
+                              <a href="./book.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2" class="header-nav-link w-inline-block"><div class="header-nav-dot"></div><div class="header-nav-text">Milad Souq</div></a>
                             </div>
-                            
                           </div>
                         </div>
                       </div>
-                      <!-- <img
-                        src="https://cdn.prod.website-files.com/6800bdb10604a7b147f8464a/6805db6220e2aad6e557d547_0247798b6127adb2cc1237bae1894ef6_Header%20Nav%20Image.avif"
-                        loading="eager" alt="alaman" class="header-mega-image" /> -->
                     </div>
                   </div>
                 </nav>
               </div>
               <a href="./about.html" class="header-nav-link w-nav-link">About us</a>
               <a href="./contact.html" class="header-nav-link w-nav-link">Contact us</a>
-              <!-- <a href="./Madarassa.html" class="header-nav-link w-nav-link">Madarassa</a> -->
             </div>
           </nav>
           <div class="header-menu-button w-nav-button">
@@ -515,7 +452,7 @@
     <!-- ══ MAIN CONTENT ══ -->
     <div class="main-wrapper">
 
-      <!-- HERO SLIDER (original — untouched) -->
+      <!-- HERO SLIDER -->
       <section data-w-id="48b36844-7268-1802-8181-67fe4c5d4e84" class="home-hero-section">
         <div class="home-hero-mobile-bg">
           <picture class="home-hero-picture active">
@@ -541,7 +478,7 @@
         </div>
       </section>
 
-      <!-- ══ PDF SECTION (original — untouched) ══ -->
+      <!-- ══ PDF SECTION (untouched) ══ -->
       <section class="madarassa-section">
         <div class="madarassa-container">
           <div class="madarassa-title-block">
@@ -590,7 +527,7 @@
         </div>
       </section>
 
-      <!-- ══ 4 IMAGE CARDS — index.html hover overlay style ══ -->
+      <!-- ══ 6 IMAGE CARDS ══ -->
       <section class="mad-cards-section">
         <div class="mad-cards-container">
 
@@ -612,17 +549,14 @@
                 <span class="mad-post-tag">Madarassa</span>
                 <h3 class="mad-post-name">Islamic Education</h3>
               </div>
-              <!-- overlay — same expanding effect as index.html trending cards -->
               <div class="mad-post-overlay">
                 <svg class="mad-post-overlay-icon" width="44" height="44" viewBox="0 0 44 44" fill="none">
-                  <g clip-path="url(#ic)">
-                    <path d="M36.759 15.199L2.109 12.305a1.5 1.5 0 0 0-1.249.816 1.5 1.5 0 0 0 .483 1.411l14.49 9.457-5.021 16.559a1.5 1.5 0 0 0 2.226 1.685L37.511 17.272a1.5 1.5 0 0 0-.752-2.073z" fill="currentColor"/>
-                  </g>
+                  <path d="M36.759 15.199L2.109 12.305a1.5 1.5 0 0 0-1.249.816 1.5 1.5 0 0 0 .483 1.411l14.49 9.457-5.021 16.559a1.5 1.5 0 0 0 2.226 1.685L37.511 17.272a1.5 1.5 0 0 0-.752-2.073z" fill="currentColor"/>
                 </svg>
               </div>
             </a>
 
-            <!-- Card 2 — Modest Fashion -->
+            <!-- Card 2 — Modest Fashion (Mens) -->
             <a href="./menswears.html" class="mad-post">
               <img class="mad-post-image"
                 src="https://i.pinimg.com/736x/8f/67/e1/8f67e15648610a08ae2d1164f5ea9807.jpg"
@@ -634,9 +568,7 @@
               </div>
               <div class="mad-post-overlay">
                 <svg class="mad-post-overlay-icon" width="44" height="44" viewBox="0 0 44 44" fill="none">
-                  <g clip-path="url(#ic)">
-                    <path d="M36.759 15.199L2.109 12.305a1.5 1.5 0 0 0-1.249.816 1.5 1.5 0 0 0 .483 1.411l14.49 9.457-5.021 16.559a1.5 1.5 0 0 0 2.226 1.685L37.511 17.272a1.5 1.5 0 0 0-.752-2.073z" fill="currentColor"/>
-                  </g>
+                  <path d="M36.759 15.199L2.109 12.305a1.5 1.5 0 0 0-1.249.816 1.5 1.5 0 0 0 .483 1.411l14.49 9.457-5.021 16.559a1.5 1.5 0 0 0 2.226 1.685L37.511 17.272a1.5 1.5 0 0 0-.752-2.073z" fill="currentColor"/>
                 </svg>
               </div>
             </a>
@@ -653,9 +585,7 @@
               </div>
               <div class="mad-post-overlay">
                 <svg class="mad-post-overlay-icon" width="44" height="44" viewBox="0 0 44 44" fill="none">
-                  <g clip-path="url(#ic)">
-                    <path d="M36.759 15.199L2.109 12.305a1.5 1.5 0 0 0-1.249.816 1.5 1.5 0 0 0 .483 1.411l14.49 9.457-5.021 16.559a1.5 1.5 0 0 0 2.226 1.685L37.511 17.272a1.5 1.5 0 0 0-.752-2.073z" fill="currentColor"/>
-                  </g>
+                  <path d="M36.759 15.199L2.109 12.305a1.5 1.5 0 0 0-1.249.816 1.5 1.5 0 0 0 .483 1.411l14.49 9.457-5.021 16.559a1.5 1.5 0 0 0 2.226 1.685L37.511 17.272a1.5 1.5 0 0 0-.752-2.073z" fill="currentColor"/>
                 </svg>
               </div>
             </a>
@@ -672,9 +602,41 @@
               </div>
               <div class="mad-post-overlay">
                 <svg class="mad-post-overlay-icon" width="44" height="44" viewBox="0 0 44 44" fill="none">
-                  <g clip-path="url(#ic)">
-                    <path d="M36.759 15.199L2.109 12.305a1.5 1.5 0 0 0-1.249.816 1.5 1.5 0 0 0 .483 1.411l14.49 9.457-5.021 16.559a1.5 1.5 0 0 0 2.226 1.685L37.511 17.272a1.5 1.5 0 0 0-.752-2.073z" fill="currentColor"/>
-                  </g>
+                  <path d="M36.759 15.199L2.109 12.305a1.5 1.5 0 0 0-1.249.816 1.5 1.5 0 0 0 .483 1.411l14.49 9.457-5.021 16.559a1.5 1.5 0 0 0 2.226 1.685L37.511 17.272a1.5 1.5 0 0 0-.752-2.073z" fill="currentColor"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Card 5 — Ladies Wear (NEW) -->
+            <a href="./ladieswear.html" class="mad-post">
+              <img class="mad-post-image"
+                src="https://i.pinimg.com/736x/96/70/9f/96709fd00100c2254a4a9973442294ef.jpg"
+                alt="Ladies Wear" loading="lazy" />
+              <div class="mad-post-badge mad-post-badge--gold">Trending</div>
+              <div class="mad-post-wrap">
+                <span class="mad-post-tag">Ladies Collection</span>
+                <h3 class="mad-post-name">Ladies Wear</h3>
+              </div>
+              <div class="mad-post-overlay">
+                <svg class="mad-post-overlay-icon" width="44" height="44" viewBox="0 0 44 44" fill="none">
+                  <path d="M36.759 15.199L2.109 12.305a1.5 1.5 0 0 0-1.249.816 1.5 1.5 0 0 0 .483 1.411l14.49 9.457-5.021 16.559a1.5 1.5 0 0 0 2.226 1.685L37.511 17.272a1.5 1.5 0 0 0-.752-2.073z" fill="currentColor"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Card 6 — Accessories (NEW) -->
+            <a href="./islamic_accessories.html" class="mad-post">
+              <img class="mad-post-image"
+                src="https://i.pinimg.com/736x/53/48/91/5348919667422f523325c7cb5ef8390f.jpg"
+                alt="Islamic Accessories" loading="lazy" />
+              <div class="mad-post-badge mad-post-badge--green">Must Have</div>
+              <div class="mad-post-wrap">
+                <span class="mad-post-tag">Accessories</span>
+                <h3 class="mad-post-name">Islamic Accessories</h3>
+              </div>
+              <div class="mad-post-overlay">
+                <svg class="mad-post-overlay-icon" width="44" height="44" viewBox="0 0 44 44" fill="none">
+                  <path d="M36.759 15.199L2.109 12.305a1.5 1.5 0 0 0-1.249.816 1.5 1.5 0 0 0 .483 1.411l14.49 9.457-5.021 16.559a1.5 1.5 0 0 0 2.226 1.685L37.511 17.272a1.5 1.5 0 0 0-.752-2.073z" fill="currentColor"/>
                 </svg>
               </div>
             </a>
