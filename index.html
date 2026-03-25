@@ -275,6 +275,7 @@
       z-index: 10;
     }
 
+    /* ===== Seasonal/Festival Section: STYLE (Start) ===== */
     .festival-wish-card {
       position: fixed;
       left: 20px;
@@ -492,40 +493,6 @@
       display: block;
     }
 
-    .festival-moon {
-      position: absolute;
-      top: 78px;
-      right: 64px;
-      width: 86px;
-      height: 86px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 35%, #fff8d8 0%, #fbe9ab 45%, #d2b86f 100%);
-      box-shadow: 0 0 40px rgba(255, 236, 168, 0.48);
-      opacity: 0.85;
-      transform: scale(0.96);
-      animation: moonDrift 9s ease-in-out infinite;
-    }
-
-    .festival-moon::after {
-      content: "";
-      position: absolute;
-      top: 8px;
-      right: 10px;
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: rgba(6, 14, 28, 0.86);
-    }
-
-    @keyframes moonDrift {
-      0%, 100% {
-        transform: translate3d(0, 0, 0) scale(0.96);
-      }
-      50% {
-        transform: translate3d(-10px, 8px, 0) scale(1);
-      }
-    }
-
     .festival-wish-content {
       position: relative;
       padding: 16px 18px;
@@ -670,6 +637,15 @@
       --festival-shadow: rgba(0, 93, 58, 0.45);
     }
 
+    body.festival-madrasa-admission {
+      --festival-title: #ffd88a;
+      --festival-text: #fff7e8;
+      --festival-border: rgba(255, 187, 82, 0.38);
+      --festival-bg1: rgba(48, 30, 0, 0.92);
+      --festival-bg2: rgba(27, 17, 0, 0.9);
+      --festival-shadow: rgba(118, 72, 0, 0.45);
+    }
+
     body.festival-eid-al-adha {
       --festival-title: #ffe1a3;
       --festival-text: #fff8ea;
@@ -708,18 +684,6 @@
       .festival-wish-content {
         border-radius: 24px;
         padding: 14px 14px;
-      }
-
-      .festival-moon {
-        top: 64px;
-        right: 24px;
-        width: 68px;
-        height: 68px;
-      }
-
-      .festival-moon::after {
-        width: 56px;
-        height: 56px;
       }
 
       .festival-splash-inner.morph-to-card {
@@ -764,18 +728,8 @@
         font-size: clamp(1.25rem, 6vw, 1.8rem);
       }
 
-      .festival-moon {
-        top: 56px;
-        right: 14px;
-        width: 56px;
-        height: 56px;
-      }
-
-      .festival-moon::after {
-        width: 46px;
-        height: 46px;
-      }
     }
+    /* ===== Seasonal/Festival Section: STYLE (End) ===== */
   </style>
 </head>
 
@@ -882,10 +836,95 @@
                   </div>
                 </nav>
               </div>
+              <div data-delay="500" data-hover="true" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff39f"
+                class="header-dropdown w-dropdown">
+                <div class="header-dropdown-toggle w-dropdown-toggle">
+                  <div class="header-nav-text">Souq</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 8" fill="none"
+                    class="header-dropdown-icon">
+                    <path
+                      d="M5.99983 7.33316C5.89016 7.3338 5.78144 7.31278 5.67991 7.2713C5.57838 7.22983 5.48603 7.16873 5.40816 7.0915L0.408162 2.0915C0.251243 1.93458 0.163086 1.72175 0.163086 1.49983C0.163086 1.27791 0.251243 1.06508 0.408162 0.908162C0.565082 0.751243 0.777911 0.663086 0.999829 0.663086C1.22175 0.663086 1.43458 0.751243 1.5915 0.908162L5.99983 5.32483L10.4082 0.916496C10.5676 0.779974 10.7726 0.708635 10.9824 0.716736C11.1921 0.724837 11.3911 0.811781 11.5395 0.960193C11.6879 1.10861 11.7748 1.30755 11.7829 1.51728C11.791 1.72701 11.7197 1.93208 11.5832 2.0915L6.58316 7.0915C6.42794 7.24545 6.21845 7.33224 5.99983 7.33316Z"
+                      fill="currentColor"></path>
+                  </svg>
+                </div>
+                <nav class="header-dropdown-list w-dropdown-list">
+                  <div class="header-mega-block header-shop-block" style="min-width:0; width:auto;">
+                    <!-- <div class="header-mega-wrap shop-product">
+                      <div class="header-list-wrapper w-dyn-list">
+                        <div role="list" class="header-list trending-collection w-dyn-items">
+                          <div role="listitem" class="header-item w-dyn-item">
+                            <a href="./menswears.html" class="header-tag-block w-inline-block">
+                              <div class="header-tag-wrap">
+                                <h6 class="header-tag-title">Mens wear Collections</h6>
+                                <div class="header-tag-name">Trending</div>
+                              </div>
+                              <div class="header-tag-except">Explore our latest Mens wear styles crafted for elegance,
+                                comfort, and timeless modest fashion.</div>
+                            </a>
+                          </div>
+                          <div role="listitem" class="header-item w-dyn-item">
+                            <a href="./ladieswear.html" class="header-tag-block w-inline-block">
+                              <div class="header-tag-wrap">
+                                <h6 class="header-tag-title">Ladies Collections</h6>
+                                <div class="header-tag-name">Trending</div>
+                              </div>
+                              <div class="header-tag-except">Discover elegant Ladies designed for modern modesty, grace,
+                                and everyday sophistication.</div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- <div id="w-node-_0610b262-7f60-3f1d-ea57-66ff4a1ff3ca-4a1ff396" class="header-mega-line"></div> -->
+                    <div class="header-mega-right">
+                      <div class="header-mega-wrap">
+                        <h6 class="header-nav-title category">Categories</h6>
+                        <div class="header-list-wrapper w-dyn-list">
+                          <div role="list" class="header-list w-dyn-items">
+                            <div role="listitem" class="header-item w-dyn-item">
+                              <a href="./menswears.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2"
+                                class="header-nav-link w-inline-block">
+                                <div class="header-nav-dot"></div>
+                                <div class="header-nav-text">Ramadan Souq</div>
+                              </a>
+                            </div>
+                            <div role="listitem" class="header-item w-dyn-item">
+                              <a href="./ladieswear.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2"
+                                class="header-nav-link w-inline-block">
+                                <div class="header-nav-dot"></div>
+                                <div class="header-nav-text">Haji bazar</div>
+                              </a>
+                            </div>
+                            <div role="listitem" class="header-item w-dyn-item">
+                              <a href="./Madarassa.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2"
+                                class="header-nav-link w-inline-block">
+                                <div class="header-nav-dot"></div>
+                                <div class="header-nav-text">Madarssa Market</div>
+                              </a>
+                            </div>
+                            <div role="listitem" class="header-item w-dyn-item">
+                              <a href="./book.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2"
+                                class="header-nav-link w-inline-block">
+                                <div class="header-nav-dot"></div>
+                                <div class="header-nav-text">Milad Souq</div>
+                              </a>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <img
+                        src="https://cdn.prod.website-files.com/6800bdb10604a7b147f8464a/6805db6220e2aad6e557d547_0247798b6127adb2cc1237bae1894ef6_Header%20Nav%20Image.avif"
+                        loading="eager" alt="alaman" class="header-mega-image" /> -->
+                    </div>
+                  </div>
+                </nav>
+              </div>
+              
               <a href="./about.html" class="header-nav-link w-nav-link">About us</a>
-              <a href="./blog.html" class="header-nav-link w-nav-link">Blog</a>
+              <!-- <a href="./blog.html" class="header-nav-link w-nav-link">Blog</a> -->
               <a href="./contact.html" class="header-nav-link w-nav-link">Contact us</a>
-              <a href="./Madarassa.html" class="header-nav-link w-nav-link">Madarassa</a>
+              <!-- <a href="./Madarassa.html" class="header-nav-link w-nav-link">Madarassa</a> -->
               
             </div>
           </nav>
@@ -1997,6 +2036,7 @@
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
+  <!-- ===== Seasonal/Festival Section: HTML (Start) ===== -->
   <div class="festival-splash" id="festivalSplash">
     <svg class="festival-splash-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
       <path id="festivalSplashPath0" d="" fill="#001b17"></path>
@@ -2017,13 +2057,12 @@
   </div>
   <div class="festival-sky" id="festivalSky">
     <canvas class="festival-sky-canvas" id="festivalSkyCanvas"></canvas>
-    <div class="festival-moon" aria-hidden="true"></div>
   </div>
   <div class="festival-wish-card" id="festivalWishCard">
     <div class="festival-wish-content">
       <div class="festival-wish-topline">
         <span class="festival-wish-emoji" id="festivalWishEmoji">✨</span>
-        <span>Festival Special Day</span>
+        <span>Special Update</span>
       </div>
       <h3 class="festival-wish-title" id="festivalWishTitle">Welcome!</h3>
       <div class="festival-wish-sub" id="festivalWishSub">Auto festival wish</div>
@@ -2031,6 +2070,7 @@
       <div class="festival-wish-date" id="festivalWishDate"></div>
     </div>
   </div>
+  <!-- ===== Seasonal/Festival Section: HTML (End) ===== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const heroImages = document.querySelectorAll('.home-hero-picture');
@@ -2044,37 +2084,105 @@
       }
     });
   </script>
+  <!-- ===== Seasonal/Festival Section: SCRIPT + Editable Config (Start) ===== -->
+  <script>
+    window.ALAMAN_FESTIVAL_CONFIG = {
+      splashSeenKey: "festival_splash_seen_v2",
+      wishes: [
+        {
+          key: "madrasa-admission",
+          enabled: true,
+          emoji: "📚",
+          title: "Madrasa Market Open",
+          sub: "New Academic Session",
+          text: "Madrasa classes are starting soon. Get all your books, stationery, and study essentials from AL AMAN.",
+          startDate: "2026-03-20",
+          endDate: "2026-06-15",
+          priority: 100
+        },
+        {
+          key: "ramadan",
+          enabled: false,
+          emoji: "🕌",
+          title: "Ramadan Mubarak",
+          sub: "Month of Mercy, Prayer and Fasting",
+          text: "May this Ramadan fill your days with peace, patience, and countless blessings.",
+          startDate: "2026-02-18",
+          endDate: "2026-03-20",
+          priority: 80
+        },
+        {
+          key: "eid",
+          enabled: true,
+          emoji: "🌙",
+          title: "Eid Mubarak",
+          sub: "Eid al-Fitr",
+          text: "May Allah accept your fasting and prayers, and fill your home with happiness.",
+          startDate: "2026-03-21",
+          endDate: "2026-03-24",
+          priority: 90
+        },
+        {
+          key: "eid-al-adha",
+          enabled: true,
+          emoji: "🐐",
+          title: "Eid al-Adha Mubarak",
+          sub: "Festival of Sacrifice",
+          text: "May this Eid al-Adha bring faith, gratitude, and barakah to you and your family.",
+          startDate: "2026-05-25",
+          endDate: "2026-05-30",
+          priority: 90
+        }
+      ]
+    };
+  </script>
 <script>
     (function () {
-      const WISHES = [
-        { key: "ramadan", emoji: "🕌", title: "Ramadan Mubarak", sub: "Month of Mercy, Prayer and Fasting", text: "May this Ramadan fill your days with peace, patience, and countless blessings.", month: 3, days: [1, 2, 3] },
-        { key: "eid", emoji: "🌙", title: "Eid Mubarak", sub: "Eid al-Fitr", text: "May Allah accept your fasting and prayers, and fill your home with happiness.", month: 4, days: [1, 2, 3] },
-        { key: "eid-al-adha", emoji: "🐐", title: "Eid al-Adha Mubarak", sub: "Festival of Sacrifice", text: "May this Eid al-Adha bring faith, gratitude, and barakah to you and your family.", month: 6, days: [6, 7, 8] }
-      ];
+      const FESTIVAL_CONFIG = window.ALAMAN_FESTIVAL_CONFIG || {};
+      const WISHES = Array.isArray(FESTIVAL_CONFIG.wishes)
+        ? FESTIVAL_CONFIG.wishes.filter((wish) => wish && wish.enabled !== false)
+        : [];
+
+      function normalizeToDay(date) {
+        return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+      }
+
+      function parseDateYMD(value) {
+        if (!value || typeof value !== "string") {
+          return null;
+        }
+        const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value.trim());
+        if (!match) {
+          return null;
+        }
+        const year = Number(match[1]);
+        const month = Number(match[2]) - 1;
+        const day = Number(match[3]);
+        return new Date(year, month, day);
+      }
+
+      function isWishActiveForDate(wish, date) {
+        const dateOnly = normalizeToDay(date);
+        const start = parseDateYMD(wish.startDate);
+        const end = parseDateYMD(wish.endDate);
+
+        if (start && dateOnly < normalizeToDay(start)) {
+          return false;
+        }
+        if (end && dateOnly > normalizeToDay(end)) {
+          return false;
+        }
+        return true;
+      }
 
       function getTodayWish() {
         const now = new Date();
-        const month = now.getMonth() + 1;
-        const day = now.getDate();
-        const exactDayMatch = WISHES.find((wish) => wish.month === month && wish.days.includes(day));
-        if (exactDayMatch) {
-          return exactDayMatch;
-        }
-
-        const monthWishes = WISHES.filter((wish) => wish.month === month);
-        if (!monthWishes.length) {
+        const activeWishes = WISHES.filter((wish) => isWishActiveForDate(wish, now));
+        if (!activeWishes.length) {
           return null;
         }
-
-        if (monthWishes.length === 1) {
-          return monthWishes[0];
-        }
-
-        return monthWishes.reduce((closest, current) => {
-          const closestAnchor = closest.days[0] || 1;
-          const currentAnchor = current.days[0] || 1;
-          return Math.abs(currentAnchor - day) < Math.abs(closestAnchor - day) ? current : closest;
-        });
+        activeWishes.sort((a, b) => (b.priority || 0) - (a.priority || 0));
+        return activeWishes[0];
       }
 
       function clearFestivalThemeClass() {
@@ -2102,6 +2210,7 @@
       const SPLASH_COLORS = {
         ramadan: ["rgba(0,25,19,0.62)", "rgba(1,48,37,0.58)", "rgba(2,65,54,0.54)", "rgba(5,100,86,0.5)", "rgba(10,130,115,0.46)"],
         eid: ["rgba(0,30,22,0.62)", "rgba(1,52,40,0.58)", "rgba(1,74,55,0.54)", "rgba(10,106,80,0.5)", "rgba(23,133,106,0.46)"],
+        "madrasa-admission": ["rgba(47,27,0,0.62)", "rgba(82,47,0,0.58)", "rgba(114,66,0,0.54)", "rgba(148,88,9,0.5)", "rgba(184,115,28,0.46)"],
         "eid-al-adha": ["rgba(42,29,0,0.62)", "rgba(75,52,0,0.58)", "rgba(107,74,0,0.54)", "rgba(141,98,8,0.5)", "rgba(177,126,28,0.46)"],
         default: ["rgba(0,25,19,0.62)", "rgba(1,48,37,0.58)", "rgba(2,65,54,0.54)", "rgba(5,100,86,0.5)", "rgba(10,130,115,0.46)"]
       };
@@ -2398,7 +2507,7 @@
         document.body.classList.add("festival-" + wish.key);
         document.body.classList.add("festival-active");
 
-        const splashSeenKey = "festival_splash_seen_v1";
+        const splashSeenKey = FESTIVAL_CONFIG.splashSeenKey || "festival_splash_seen_v1";
         const shouldShowSplash = !sessionStorage.getItem(splashSeenKey);
 
         if (shouldShowSplash) {
@@ -2418,6 +2527,7 @@
       document.addEventListener("DOMContentLoaded", applyTodayWish);
     })();
   </script>
+  <!-- ===== Seasonal/Festival Section: SCRIPT + Editable Config (End) ===== -->
   <script src="./index_files/mobile-nav-scroll-lock.js"></script>
 </body>
 <script>

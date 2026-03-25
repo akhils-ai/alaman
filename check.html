@@ -30,6 +30,7 @@
         <link href="https://cdn.prod.website-files.com/6800bdb10604a7b147f8464a/css/modestwear-tnc.webflow.shared.ed5d1c6af.min.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com" rel="preconnect"/>
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+        <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet"/>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
         <script type="text/javascript">
             WebFont.load({
@@ -46,7 +47,7 @@
                 ("ontouchstart"in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
             }(window, document);
         </script>
-<script type="text/javascript">
+        <script type="text/javascript">
             window.__WEBFLOW_CURRENCY_SETTINGS = {
                 "currencyCode": "USD",
                 "symbol": "$",
@@ -57,6 +58,11 @@
                 "hideDecimalForWholeNumbers": false
             };
         </script>
+        <style>
+            html, body, body * {
+                font-family: "El Messiri", sans-serif !important;
+            }
+        </style>
     </head>
     <body>
         <div class="page-wrapper">
@@ -181,9 +187,93 @@
                                                     <div class="header-nav-dot"></div>
                                                     <div class="header-nav-text">Shop</div>
                                                 </a>
-                                                <a href="/blog" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3f2" class="header-nav-link sub-nav-link w-inline-block">
+                                                <div data-delay="500" data-hover="true" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff39f"
+                class="header-dropdown w-dropdown">
+                <div class="header-dropdown-toggle w-dropdown-toggle">
+                  <div class="header-nav-text">Souq</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 8" fill="none"
+                    class="header-dropdown-icon">
+                    <path
+                      d="M5.99983 7.33316C5.89016 7.3338 5.78144 7.31278 5.67991 7.2713C5.57838 7.22983 5.48603 7.16873 5.40816 7.0915L0.408162 2.0915C0.251243 1.93458 0.163086 1.72175 0.163086 1.49983C0.163086 1.27791 0.251243 1.06508 0.408162 0.908162C0.565082 0.751243 0.777911 0.663086 0.999829 0.663086C1.22175 0.663086 1.43458 0.751243 1.5915 0.908162L5.99983 5.32483L10.4082 0.916496C10.5676 0.779974 10.7726 0.708635 10.9824 0.716736C11.1921 0.724837 11.3911 0.811781 11.5395 0.960193C11.6879 1.10861 11.7748 1.30755 11.7829 1.51728C11.791 1.72701 11.7197 1.93208 11.5832 2.0915L6.58316 7.0915C6.42794 7.24545 6.21845 7.33224 5.99983 7.33316Z"
+                      fill="currentColor"></path>
+                  </svg>
+                </div>
+                <nav class="header-dropdown-list w-dropdown-list">
+                  <div class="header-mega-block header-shop-block" style="min-width:0; width:auto;">
+                    <!-- <div class="header-mega-wrap shop-product">
+                      <div class="header-list-wrapper w-dyn-list">
+                        <div role="list" class="header-list trending-collection w-dyn-items">
+                          <div role="listitem" class="header-item w-dyn-item">
+                            <a href="./menswears.html" class="header-tag-block w-inline-block">
+                              <div class="header-tag-wrap">
+                                <h6 class="header-tag-title">Mens wear Collections</h6>
+                                <div class="header-tag-name">Trending</div>
+                              </div>
+                              <div class="header-tag-except">Explore our latest Mens wear styles crafted for elegance,
+                                comfort, and timeless modest fashion.</div>
+                            </a>
+                          </div>
+                          <div role="listitem" class="header-item w-dyn-item">
+                            <a href="./ladieswear.html" class="header-tag-block w-inline-block">
+                              <div class="header-tag-wrap">
+                                <h6 class="header-tag-title">Ladies Collections</h6>
+                                <div class="header-tag-name">Trending</div>
+                              </div>
+                              <div class="header-tag-except">Discover elegant Ladies designed for modern modesty, grace,
+                                and everyday sophistication.</div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- <div id="w-node-_0610b262-7f60-3f1d-ea57-66ff4a1ff3ca-4a1ff396" class="header-mega-line"></div> -->
+                    <div class="header-mega-right">
+                      <div class="header-mega-wrap">
+                        <h6 class="header-nav-title category">Categories</h6>
+                        <div class="header-list-wrapper w-dyn-list">
+                          <div role="list" class="header-list w-dyn-items">
+                            <div role="listitem" class="header-item w-dyn-item">
+                              <a href="./menswears.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2"
+                                class="header-nav-link w-inline-block">
+                                <div class="header-nav-dot"></div>
+                                <div class="header-nav-text">Ramadan Souq</div>
+                              </a>
+                            </div>
+                            <div role="listitem" class="header-item w-dyn-item">
+                              <a href="./ladieswear.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2"
+                                class="header-nav-link w-inline-block">
+                                <div class="header-nav-dot"></div>
+                                <div class="header-nav-text">Haji bazar</div>
+                              </a>
+                            </div>
+                            <div role="listitem" class="header-item w-dyn-item">
+                              <a href="./Madarassa.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2"
+                                class="header-nav-link w-inline-block">
+                                <div class="header-nav-dot"></div>
+                                <div class="header-nav-text">Madarssa Market</div>
+                              </a>
+                            </div>
+                            <div role="listitem" class="header-item w-dyn-item">
+                              <a href="./book.html" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3d2"
+                                class="header-nav-link w-inline-block">
+                                <div class="header-nav-dot"></div>
+                                <div class="header-nav-text">Milad Souq</div>
+                              </a>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <img
+                        src="https://cdn.prod.website-files.com/6800bdb10604a7b147f8464a/6805db6220e2aad6e557d547_0247798b6127adb2cc1237bae1894ef6_Header%20Nav%20Image.avif"
+                        loading="eager" alt="alaman" class="header-mega-image" /> -->
+                    </div>
+                  </div>
+                </nav>
+              </div>
+                                                <!-- <a href="/blog" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3f2" class="header-nav-link sub-nav-link w-inline-block">
                                                     <div class="header-nav-dot"></div>
-                                                    <div class="header-nav-text">Blog</div>
+                                                    <div class="header-nav-text">Blog</div> -->
                                                 </a>
                                                 <a href="/contact-us" data-w-id="0610b262-7f60-3f1d-ea57-66ff4a1ff3fa" class="header-nav-link sub-nav-link w-inline-block">
                                                     <div class="header-nav-dot"></div>
@@ -2378,7 +2468,7 @@
           </div>
           <div data-w-id="e23a395c-629a-f753-7a5f-d78140bae0b2" class="w-layout-grid footer-social-card-block">
             <a id="w-node-e23a395c-629a-f753-7a5f-d78140bae0b3-40bae0ac"
-              data-w-id="e23a395c-629a-f753-7a5f-d78140bae0b3" href="https://www.instagram.com/alaman_souqalhind?igsh=cnRwamc0ano5a3R2"
+              data-w-id="e23a395c-629a-f753-7a5f-d78140bae0b3" href="https://www.instagram.com/alaman_pardha/"
               target="_blank" class="footer-social-card w-inline-block">
               <img
                 src="https://i.pinimg.com/736x/d8/03/e8/d803e8e110d4d3c5ef35aff8f23b7718.jpg"
@@ -2400,7 +2490,7 @@
                 </svg>
               </div>
             </a>
-            <a data-w-id="e23a395c-629a-f753-7a5f-d78140bae0bb" href="https://www.instagram.com/alaman_souqalhind?igsh=cnRwamc0ano5a3R2"
+            <a data-w-id="e23a395c-629a-f753-7a5f-d78140bae0bb" href="https://www.instagram.com/alaman_pardha/"
               target="_blank" class="footer-social-card w-inline-block">
               <img
                 src="https://images.jdmagicbox.com//v2/comp/alappuzha/x2/0477px477.x477.180315133600.k3x2/menu/al-aman-islamic-store-valanjavazhy-alappuzha-readymade-garment-retailers-muiu0z4.jpg"
@@ -2422,7 +2512,7 @@
                 </svg>
               </div>
             </a>
-            <a data-w-id="e23a395c-629a-f753-7a5f-d78140bae0c3" href="https://www.instagram.com/alaman_souqalhind?igsh=cnRwamc0ano5a3R2"
+            <a data-w-id="e23a395c-629a-f753-7a5f-d78140bae0c3" href="https://www.instagram.com/alaman_pardha/"
               target="_blank" class="footer-social-card w-inline-block">
               <img
                 src="https://i.pinimg.com/736x/7b/2a/f5/7b2af574cf86899bad818c11b41fc7a8.jpg"
@@ -2444,7 +2534,7 @@
                 </svg>
               </div>
             </a>
-            <a data-w-id="e23a395c-629a-f753-7a5f-d78140bae0cb" href="https://www.instagram.com/alaman_souqalhind?igsh=cnRwamc0ano5a3R2"
+            <a data-w-id="e23a395c-629a-f753-7a5f-d78140bae0cb" href="https://www.instagram.com/alaman_pardha/"
               target="_blank" class="footer-social-card w-inline-block">
               <img
                 src="https://i.pinimg.com/736x/83/2f/a6/832fa69766c07d040eb0864156f98ad5.jpg"
@@ -2466,7 +2556,7 @@
                 </svg>
               </div>
             </a>
-            <a data-w-id="e23a395c-629a-f753-7a5f-d78140bae0d3" href="https://www.instagram.com/alaman_souqalhind?igsh=cnRwamc0ano5a3R2"
+            <a data-w-id="e23a395c-629a-f753-7a5f-d78140bae0d3" href="https://www.instagram.com/alaman_pardha/"
               target="_blank" class="footer-social-card w-inline-block">
               <img
                 src="https://i.pinimg.com/736x/d8/03/e8/d803e8e110d4d3c5ef35aff8f23b7718.jpg"
